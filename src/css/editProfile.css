@@ -1,0 +1,22 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.wrapper input {
+  margin: 10px;
+  padding: 10px;
+  border-radius: 4px;
+  border-color: rgb(206, 206, 206, 0.5);
+  gap: 100px 100px;
+}
+
+.wrapper > input::placeholder {
+  color: rgb(163, 160, 160);
+  font-weight: bold;
+}
+
+.wrapper button {
+  margin: 10px;
+  width: 100px;
+}
