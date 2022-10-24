@@ -17,13 +17,11 @@ export default function LoginForm() {
   const { register, handleSubmit } = useForm(); // register = {...register} , handleSubmit on form
   const dispatch = useDispatch()
   const [userName, setUserName] = useState("")
-  console.log("val", userName)
-  console.log("Storage", userNameStorage)
 
   // state.user => user: userReducer in my store in authService.js
   // I destructure the state for 
   const { userToken, error } = useSelector(state => state.user)
-  const { userRemember } = useSelector((state) => state.user)
+  // const { userRemember } = useSelector((state) => state.user)
   
   /**
    * Call the userLogin action 

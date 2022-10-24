@@ -13,7 +13,8 @@ export const userProfile = createAsyncThunk(
                     Authorization: `Bearer ${user.userToken}`,
                 },
             }
-            const { data } = await axios.post("http://localhost:3001/api/v1/user/profile",{}, config)
+            // retrieve data of the user
+            const { data } = await axios.post("http://localhost:3001/api/v1/user/profile",{}, config)  
             return data
         } catch (error) {
             // return custom error message from API 
@@ -40,7 +41,7 @@ export const userEditProfile = createAsyncThunk(
                 firstName: firstName,
                 lastName: lastName
             }, config)
-
+            // data updated with the new data(firstName, lastName)
             return data
         } catch (error) {
             if (error.response && error.response.data.message) {

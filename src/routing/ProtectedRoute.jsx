@@ -20,3 +20,4 @@ export default function ProtectedRoute() {
   // returns child route elements
   return <Outlet />
 }
+

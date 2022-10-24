@@ -12,6 +12,8 @@ import { faRightFromBracket } from "@fortawesome/free-solid-svg-icons";
 export default function Header() {
   const dispatch = useDispatch()
   const { userInfo, userToken } = useSelector((state) => state.user)
+  const screen = window.innerWidth
+  console.log(screen)
 
   return (
     <nav className="main-nav">
@@ -30,8 +32,8 @@ export default function Header() {
             <p className="header-name">{userInfo.firstName}</p>
             {/* j'appelle mon action "user/logout" avec dispatch() */}
             <Link to="/" className="main-nav-item" onClick={() => dispatch(logout())}>
-            <FontAwesomeIcon className="fa-bracket" icon={faRightFromBracket} />
-              Sign out
+              <FontAwesomeIcon className="fa-bracket" icon={faRightFromBracket} />
+              <p className="sign-out">Sign out</p>
             </Link>
           </div>
         ) : (<>

@@ -23,7 +23,6 @@ export default function EditProfile() {
    * @param {object} firstName, lastName
    */
   const submitEdit = (data) => {
-    console.log(data);
     const firstName =
       data.firstName.substring(0, 1).toUpperCase() +
       data.firstName.substring(1).toLowerCase();
