@@ -1,5 +1,9 @@
 import EditProfile from "./EditProfile";
 
+/**
+ * Display profil details
+ * @returns html
+ */
 export default function ProfilDetails() {
 
   return (

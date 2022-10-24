@@ -1,3 +1,7 @@
+/**
+ * Display the footer page
+ * @returns html
+ */
 export default function Footer() {
   return (
     <footer className="footer">

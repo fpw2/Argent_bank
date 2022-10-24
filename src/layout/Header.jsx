@@ -5,6 +5,10 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faUser } from "@fortawesome/free-solid-svg-icons"
 import { faRightFromBracket } from "@fortawesome/free-solid-svg-icons";
 
+/**
+ * Display the header page
+ * @returns html
+ */
 export default function Header() {
   const dispatch = useDispatch()
   const { userInfo, userToken } = useSelector((state) => state.user)

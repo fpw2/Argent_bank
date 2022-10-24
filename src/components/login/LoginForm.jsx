@@ -7,6 +7,10 @@ import { remember } from "../../feature/auth/auth.slice";
 import Button from "../ui-kit/Button";
 import ErrorLoginForm from "../error/ErrorLoginForm";
 
+/**
+ * Display the login form
+ * @returns html
+ */
 export default function LoginForm() {
   const userNameStorage = localStorage.getItem("username")
   const navigate = useNavigate()

@@ -17,6 +17,9 @@ const initialState = {
     userRemember: false
 }
 
+/**
+ * Create a slice with states, actions and reduer
+ */
 const userSlice = createSlice({
     name: "user",
     initialState,
@@ -36,7 +39,6 @@ const userSlice = createSlice({
             state.editing = false
         },
         remember: (state, {payload}) => {
-            console.log("payload",payload)
             state.userRemember = !state.userRemember
             if(state.userRemember){
                 localStorage.setItem("username", payload)

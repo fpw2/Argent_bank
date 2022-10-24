@@ -1,5 +1,7 @@
 import { NavLink } from "react-router-dom";
-
+ /**
+  * Display the page error when the path in url is wrong
+  */
 export default function Error() {
     return (
         <div className="error">
