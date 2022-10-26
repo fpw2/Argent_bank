@@ -10,7 +10,7 @@ const userToken = localStorage.getItem("userToken") ? localStorage.getItem("user
 const initialState = {
     loading: false,
     editing: false,
-    userInfo: {},
+    userInfo: {},  
     userToken, // for storing the token what backend return
     error: null,
     success: null,
@@ -38,14 +38,7 @@ const userSlice = createSlice({
         cancel: (state) => {
             state.editing = false
         },
-        remember: (state, {payload}) => {
-            state.userRemember = !state.userRemember
-            if(state.userRemember){
-                localStorage.setItem("username", payload)
-            }else{
-                localStorage.removeItem("username")
-            }
-        }
+      
     },
     extraReducers: { // used to manage different state (pending, fullfilled, rejected)
         // login
@@ -59,6 +52,7 @@ const userSlice = createSlice({
             state.success = true
         },
         [userLogin.rejected]: (state, { payload }) => {
+            localStorage.removeItem("username") // if bad login 
             state.loading = false
             state.error = payload
             state.success = false
@@ -100,7 +94,7 @@ const userSlice = createSlice({
 })
 
 // Actions // 
-export const { logout, edit, save, cancel, remember } = userSlice.actions
+export const { logout, edit, save, cancel } = userSlice.actions
 
 // Reducer //
 export const userReducer = userSlice.reducer

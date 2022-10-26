@@ -4,6 +4,8 @@ import { logout } from "../feature/auth/auth.slice";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faUser } from "@fortawesome/free-solid-svg-icons"
 import { faRightFromBracket } from "@fortawesome/free-solid-svg-icons";
+import { useEffect } from "react";
+import { userProfile } from "../feature/auth/profilService";
 
 /**
  * Display the header page
@@ -12,8 +14,12 @@ import { faRightFromBracket } from "@fortawesome/free-solid-svg-icons";
 export default function Header() {
   const dispatch = useDispatch()
   const { userInfo, userToken } = useSelector((state) => state.user)
-  const screen = window.innerWidth
-  console.log(screen)
+
+  useEffect(() => {
+    if (userToken) {
+      dispatch(userProfile());
+    }
+  }, [userToken, dispatch]);
 
   return (
     <nav className="main-nav">

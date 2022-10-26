@@ -8,7 +8,11 @@ export default function Profil() {
   // state.user (user match to the key of reducer in the store)
   const { userToken } = useSelector((state) => state.user);
 
-  // automatically authenticate user if token is found
+  
+  /**
+   * Automatically authenticate user if token is found
+   * retrieve data of user
+   */
   useEffect(() => {
     if (userToken) {
       dispatch(userProfile());

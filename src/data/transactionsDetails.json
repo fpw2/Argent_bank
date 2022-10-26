@@ -23,6 +23,7 @@
         {
             "id": 1,
             "date": "june 20th, 2020",
+            "currentMonth": "october",
             "description": "Golden Sun Bakery",
             "amount": "$5.00",
             "balance": "$2082.79",
